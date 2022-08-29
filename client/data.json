@@ -1,0 +1,74 @@
+[
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f6.jpeg",
+    "name": "Rosa Burgundy",
+    "productId": 1
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f5.jpeg",
+    "name": "Rosa Iceberg",
+    "productId": 2
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f4.jpeg",
+    "name": "Hibiscus",
+    "productId": 3
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f7.jpeg",
+    "name": "Ariel",
+    "productId": 4
+  },
+  {
+    "category": "Container Plants",
+    "price": 45.99,
+    "instructions": "They do not thrive indoors, where the light is too dim, and humidity too low, for them to grow properly.",
+    "photo": "f8.jpeg",
+    "name": "Bonsai Tree",
+    "productId": 5
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f3.jpeg",
+    "name": "Rosa Burgundy",
+    "productId": 6
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f7.jpeg",
+    "name": "Ariel",
+    "productId": 7
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f8.jpeg",
+    "name": "Bonsai Tree",
+    "productId": 8
+  },
+  {
+    "category": "Shrubs",
+    "price": 22.99,
+    "instructions": "Deep purple colored flowers bushy rounded growth habit to 3 feet tall. Plant in full sun. Water regularly.",
+    "photo": "f2.jpeg",
+    "name": "Rosa Burgundy",
+    "productId": 9
+  }
+]

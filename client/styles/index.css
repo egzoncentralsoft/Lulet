@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flowers {
+  @apply grid lg:grid-cols-3 lg:gap-16 xl:gap-24 md:grid-cols-2 md:gap-12 sm:grid-cols-1 gap-8 relative bg-indigo-50	  px-28 mt-10;
+}
