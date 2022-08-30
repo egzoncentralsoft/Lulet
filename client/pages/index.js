@@ -1,5 +1,6 @@
 import flowers from "../data.json";
 import Search from "../components/Search";
+import Image from "next/image";
 
 export default function Home(props) {
   return (
@@ -22,7 +23,7 @@ export default function Home(props) {
             key={i}
           >
             <a href={`/flowers/${flower.productId}`}>
-              <img
+              <Image
                 src={`/${flower.photo}`}
                 className="w-full h-80 object-cover rounded-xl"
               />

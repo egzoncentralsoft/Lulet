@@ -1,4 +1,5 @@
 import flowers from "../../data.json";
+import Image from "next/image";
 
 export default function Home(props) {
   const currentFlower = flowers.find(
@@ -11,7 +12,7 @@ export default function Home(props) {
       key={"e"}
     >
       <p className=" pt-10  pl-44 font-bold text-5xl">{currentFlower?.name}</p>
-      <img
+      <Image
         src={`/${currentFlower?.photo}`}
         className="w-100 h-100  mt-14 object-cover rounded-xl"
       />

@@ -3,7 +3,7 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Body from "../components/Body";
 import Footer from "../components/Footer";
 
-const xoni = () => {
+const ManageFlowers = () => {
   return (
     <div className="bg-indigo-50		">
       <div className="bg-indigo-900">
@@ -15,6 +15,6 @@ const xoni = () => {
   );
 };
 
-export default xoni;
+export default ManageFlowers;
 
 export const getServerSideProps = withPageAuthRequired();
