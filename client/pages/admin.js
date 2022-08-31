@@ -2,7 +2,6 @@ import { useUser } from "@auth0/nextjs-auth0";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Xoni() {
   const { user, error, isLoading } = useUser();
@@ -19,7 +18,7 @@ export default function Xoni() {
   return (
     <div className="flex h-100">
       <div className=" w-2/3 ">
-        <Image
+        <img
           className="bg-black w-full h-screen object-cover"
           src="https://updatenaw.com/wp-content/uploads/2021/01/pexels-masum-ahmed-3864474.jpg.webp"
           alt="Logo"

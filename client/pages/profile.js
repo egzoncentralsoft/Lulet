@@ -1,7 +1,6 @@
 import { useUser } from "@auth0/nextjs-auth0";
-import Image from "next/image";
 
-const Profile = () => {
+const Xoni = () => {
   const { user, error, isLoading } = useUser();
 
   return (
@@ -21,10 +20,10 @@ const Profile = () => {
         <div className="mt-20  w-100 bg-slate-400 rounded-3xl">
           <div className=" bg- flex justify-center ">
             <hr></hr>
-            <Image
+            <img
               className="w-40 h-40  rounded-full object-cover mt-8 shadow-xl   "
               src={user?.picture}
-            />
+            ></img>
           </div>
           <div className="text-center text-4xl mt-12">
             <p>Hi {user?.nickname}</p>
@@ -44,4 +43,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Xoni;

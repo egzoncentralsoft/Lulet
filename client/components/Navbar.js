@@ -3,7 +3,6 @@ import { useUser } from "@auth0/nextjs-auth0";
 import { Menu } from "@headlessui/react";
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
   const { user, error, isLoading } = useUser();
@@ -17,7 +16,7 @@ const Navbar = () => {
       </div>
       <div className="flex pr-6 ">
         <div className="pr-6">
-          <Image
+          <img
             src={user?.picture}
             className=" w-16 h-16 object-cover rounded-full "
           />
