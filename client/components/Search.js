@@ -52,7 +52,7 @@ const Search = ({ placeholder, data }) => {
               <a
                 key={key}
                 className="w-full h-10 flex items-center	no-underline	hover:bg-gray-400	"
-                href={`/flowers/${value.productId}`}
+                href={`/flowers/${value.id}`}
               >
                 <p className="ml-2.5">{value.name}</p>
               </a>
