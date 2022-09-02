@@ -14,17 +14,18 @@ const Body = () => {
       "https://frozen-tundra-68521.herokuapp.com/api/flowers"
     ).then((response) => response.json());
     setData(response);
-    return response;
   };
   useEffect(() => {
     fetchFlowers();
   }, []);
 
   // deleting flower with filter method
-  const deleteFlower = (id) => {
-    const modifiedFlowers =
-      data && data.filter((flower) => flower.id !== Number(id));
-    setData(modifiedFlowers);
+  const deleteFlower = async (id) => {
+    const response = await fetch(
+      `https://frozen-tundra-68521.herokuapp.com/api/flowers/${id}`,
+      { method: "DELETE" }
+    ).then((response) => response.json());
+    fetchFlowers();
   };
 
   // adding new flower
