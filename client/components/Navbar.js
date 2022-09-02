@@ -6,7 +6,6 @@ import Link from "next/link";
 
 const Navbar = () => {
   const { user, error, isLoading } = useUser();
-  //   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="flex py-6  justify-between">
       <div>

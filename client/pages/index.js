@@ -1,4 +1,3 @@
-import flowers from "../data.json";
 import Search from "../components/Search";
 import { useEffect, useState } from "react";
 
@@ -13,7 +12,7 @@ export default function Home(props) {
 
     return response;
   };
-  console.log(data);
+
   useEffect(() => {
     fetchFlowers();
   }, []);

@@ -1,9 +1,23 @@
-import flowers from "../../data.json";
+import { useEffect, useState } from "react";
 
 export default function Home(props) {
-  const currentFlower = flowers.find(
-    (flower) => `${flower.productId}` === props.id
-  );
+  const [data, setData] = useState(null);
+
+  const fetchFlowers = async () => {
+    const response = await fetch(
+      "https://frozen-tundra-68521.herokuapp.com/api/flowers"
+    ).then((response) => response.json());
+    setData(response);
+
+    return response;
+  };
+
+  useEffect(() => {
+    fetchFlowers();
+  }, []);
+
+  const currentFlower =
+    data && data.find((flower) => `${flower.id}` === props.id);
 
   return (
     <div
@@ -12,7 +26,7 @@ export default function Home(props) {
     >
       <p className=" pt-10  pl-44 font-bold text-5xl">{currentFlower?.name}</p>
       <img
-        src={`/${currentFlower?.photo}`}
+        src={`/${currentFlower?.img}`}
         className="w-100 h-100  mt-14 object-cover rounded-xl"
       />
       <div className="m-5 ml-10">

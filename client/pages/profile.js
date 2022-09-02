@@ -1,22 +1,8 @@
 import { useUser } from "@auth0/nextjs-auth0";
-import { useEffect, useState } from "react";
 
 const Xoni = () => {
   const { user, error, isLoading } = useUser();
-  const [data, setData] = useState(null);
 
-  const fetchFlowers = async () => {
-    const response = await fetch(
-      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
-    ).then((response) => response.json());
-    setData(response);
-    console.log("data", response);
-    return response;
-  };
-
-  useEffect(() => {
-    fetchFlowers();
-  }, []);
   return (
     <div className="grid  max-h-screen min-h-screen w-full">
       <div className=" w-full h-24 flex justify-between items-center bg-slate-400">
