@@ -9,8 +9,6 @@ export default function Home(props) {
       "https://frozen-tundra-68521.herokuapp.com/api/flowers"
     ).then((response) => response.json());
     setData(response);
-
-    return response;
   };
 
   useEffect(() => {
@@ -39,7 +37,7 @@ export default function Home(props) {
             >
               <a href={`/flowers/${flower.id}`}>
                 <img
-                  src={`/${flower.img}`}
+                  src={`${flower.img}`}
                   className="w-full h-80 object-cover rounded-xl"
                 />
                 <div className="m-5">

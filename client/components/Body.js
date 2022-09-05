@@ -6,7 +6,13 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 const Body = () => {
   const [data, setData] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [flower, setFlower] = useState({});
+  const [flower, setFlower] = useState({
+    id: "",
+    price: "",
+    category: "",
+    img: "",
+    name: "",
+  });
   const [newFlowerModal, setNewFlowerModal] = useState(false);
 
   const fetchFlowers = async () => {
@@ -32,10 +38,19 @@ const Body = () => {
   const addOpenModal = () => {
     setNewFlowerModal(true);
   };
-  const addedFLower = () => {
-    const modifiedFlowers = [...data, flower];
-
-    setData(modifiedFlowers);
+  const addedFLower = async () => {
+    const response = await fetch(
+      `https://frozen-tundra-68521.herokuapp.com/api/flowers`,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(flower),
+      }
+    );
+    fetchFlowers();
     setNewFlowerModal(false);
     setFlower({});
   };
@@ -45,7 +60,7 @@ const Body = () => {
   };
 
   const changeFlowerPhoto = (e) => {
-    setFlower({ ...flower, photo: URL.createObjectURL(e.target.files[0]) });
+    setFlower({ ...flower, img: URL.createObjectURL(e.target.files[0]) });
   };
   // closing the modal and saving the flower after being edit
   const openModal = ({ flower }) => {
@@ -53,22 +68,19 @@ const Body = () => {
     setShowModal(true);
   };
 
-  const updateFlowers = (id) => {
-    const newFlower =
-      data &&
-      data.map((f) => {
-        if (f.productId === id) {
-          return {
-            ...f,
-            name: flower.name,
-            price: flower.price,
-            category: flower.category,
-          };
-        }
-
-        return f;
-      });
-    setData(newFlower);
+  const updateFlowers = async (id) => {
+    const response = await fetch(
+      `https://frozen-tundra-68521.herokuapp.com/api/flowers/${id}`,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "PUT",
+        body: JSON.stringify(flower),
+      }
+    ).then((response) => response.json());
+    fetchFlowers();
     setShowModal(false);
     setFlower({});
   };
@@ -228,6 +240,7 @@ const Body = () => {
                 <input
                   className="text-gray-700 font-semibold  ml-2 "
                   name="category"
+                  value={flower.category}
                   onChange={(e) => addFlow(e)}
                 ></input>
               </div>
@@ -236,13 +249,13 @@ const Body = () => {
                 <input
                   type="file"
                   className=" ml-2"
-                  name="photo"
+                  name="img"
                   onChange={(e) => changeFlowerPhoto(e)}
                 ></input>
               </div>
               <div className="w-full  text-center">
                 <button
-                  onClick={() => addedFLower({ flower })}
+                  onClick={addedFLower}
                   className=" bg-blue-700 h-10 w-36 text-white text-lg rounded-md border  hover:text-black shadow-sm font-medium  hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 "
                 >
                   Add Flower

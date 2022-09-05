@@ -5,7 +5,7 @@ export default function Home(props) {
 
   const fetchFlowers = async () => {
     const response = await fetch(
-      "https://frozen-tundra-68521.herokuapp.com/api/flowers"
+      `https://frozen-tundra-68521.herokuapp.com/api/flowers`
     ).then((response) => response.json());
     setData(response);
 
@@ -26,7 +26,7 @@ export default function Home(props) {
     >
       <p className=" pt-10  pl-44 font-bold text-5xl">{currentFlower?.name}</p>
       <img
-        src={`/${currentFlower?.img}`}
+        src={`${currentFlower?.img}`}
         className="w-100 h-100  mt-14 object-cover rounded-xl"
       />
       <div className="m-5 ml-10">
