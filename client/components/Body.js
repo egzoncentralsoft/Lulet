@@ -50,6 +50,7 @@ const Body = () => {
         body: JSON.stringify(flower),
       }
     );
+    console.log(flower);
     fetchFlowers();
     setNewFlowerModal(false);
     setFlower({});
@@ -60,7 +61,7 @@ const Body = () => {
   };
 
   const changeFlowerPhoto = (e) => {
-    setFlower({ ...flower, img: URL.createObjectURL(e.target.files[0]) });
+    setFlower({ ...flower, img: e.target.files[0] });
   };
   // closing the modal and saving the flower after being edit
   const openModal = ({ flower }) => {
