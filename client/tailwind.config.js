@@ -50,6 +50,7 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
+      lightgray: '#eff6ff'
     }),
     columns: {
       auto: "auto",

@@ -2,6 +2,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useEffect, useState } from "react";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import formData from "form-data";
 
 const Body = () => {
   const [data, setData] = useState([]);
@@ -12,6 +13,7 @@ const Body = () => {
     category: "",
     img: "",
     name: "",
+    description:""
   });
   const [newFlowerModal, setNewFlowerModal] = useState(false);
 
@@ -28,7 +30,7 @@ const Body = () => {
   // deleting flower with filter method
   const deleteFlower = async (id) => {
     const response = await fetch(
-      `https://frozen-tundra-68521.herokuapp.com/api/flowers/${id}`,
+      `https://frozen-tundra-68521.herokuapp.com/api/flowers${id}`,
       { method: "DELETE" }
     ).then((response) => response.json());
     fetchFlowers();
@@ -39,15 +41,20 @@ const Body = () => {
     setNewFlowerModal(true);
   };
   const addedFLower = async () => {
+
+    const fileData = new formData();
+    fileData.append("name", flower.name);
+    fileData.append("price", flower.price);
+    fileData.append("img", flower.img);
+    fileData.append("category", flower.category);
+    fileData.append("description", flower.description);
+
     const response = await fetch(
       `https://frozen-tundra-68521.herokuapp.com/api/flowers`,
       {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
         method: "POST",
-        body: JSON.stringify(flower),
+        body: fileData,
+        //body: JSON.stringify(flower),
       }
     );
     fetchFlowers();
@@ -60,7 +67,7 @@ const Body = () => {
   };
 
   const changeFlowerPhoto = (e) => {
-    setFlower({ ...flower, img: URL.createObjectURL(e.target.files[0]) });
+    setFlower({ ...flower, img: (e.target.files[0]) });
   };
   // closing the modal and saving the flower after being edit
   const openModal = ({ flower }) => {
@@ -69,6 +76,7 @@ const Body = () => {
   };
 
   const updateFlowers = async (id) => {
+    
     const response = await fetch(
       `https://frozen-tundra-68521.herokuapp.com/api/flowers/${id}`,
       {
@@ -244,6 +252,15 @@ const Body = () => {
                   onChange={(e) => addFlow(e)}
                 ></input>
               </div>
+              <div className=" flex ">
+                <h3 className="text-gray-700 font-semibold text-lg">Description: </h3>
+                <textarea
+                  className=" ml-2"
+                  name="description"
+                  value={flower.description}
+                  onChange={(e) => addFlow(e)}
+                ></textarea>
+                </div>
               <div className=" flex ">
                 <h3 className="text-gray-700 font-semibold text-lg">Photo: </h3>
                 <input

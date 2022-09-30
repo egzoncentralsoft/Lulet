@@ -3,9 +3,17 @@ const app = express();
 const bcrypt = require('bcrypt');
 const flowers = require('./routes/flowers');
 const { pool } = require('./DB_config');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 5000;
+app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+/*
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+  }) */
 
 app.get('/',(req,res)=>{
     res.send('Main Page');
@@ -49,5 +57,5 @@ app.post('/users/register',async (req,res)=>{
 })
 
 app.listen(PORT, ()=>{
-    console.log(`sever runing on ${PORT}`);
+    console.log(`server running on ${PORT}`);
 });

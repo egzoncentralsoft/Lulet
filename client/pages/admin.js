@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 export default function Xoni() {
-  const { user, error, isLoading } = useUser();
+  const { user, error, isLoading} = useUser();
+
   const router = useRouter();
   useEffect(() => {
     if (user) {

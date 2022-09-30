@@ -1,19 +1,18 @@
 import { useUser } from "@auth0/nextjs-auth0";
 
 const Xoni = () => {
-  const { user, error, isLoading } = useUser();
-
+  const { user, error, isLoading} = useUser();
+  console.log(user);
   return (
     <div className="grid  max-h-screen min-h-screen w-full">
       <div className=" w-full h-24 flex justify-between items-center bg-slate-400">
-        <div className="ml-4 text-3xl font-semibold rounded-xl bg-slate-100">
+        <div className="ml-4 text-3xl font-semibold rounded-xl ">
           <p className=" pl-6 pr-2 ">Welcome to your Profile</p>
         </div>
-        <div className="flex rounded-xl bg-white font-semibold">
+        <div className="flex rounded-xl  font-semibold">
           <p className="pl-3 rounded-r-none  text-xl pr-4">
-            Your loged in as :{" "}
+            Your loged in as: {user?.name}
           </p>
-          <p className="  rounded-xl rounded-l-none pr-10 ">{user?.name}</p>
         </div>
       </div>
       <div className="w-full flex justify-center h-screen  bg-white">
@@ -26,7 +25,7 @@ const Xoni = () => {
             ></img>
           </div>
           <div className="text-center text-4xl mt-12">
-            <p>Hi {user?.nickname}</p>
+            <p>Hi {user?.given_name}</p>
           </div>
           <div className="mt-10 justify-center items-center pl-20">
             <br></br>

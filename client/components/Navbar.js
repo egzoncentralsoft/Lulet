@@ -15,10 +15,13 @@ const Navbar = () => {
       </div>
       <div className="flex pr-6 ">
         <div className="pr-6">
+          <Link href='/profile'>
           <img
             src={user?.picture}
             className=" w-16 h-16 object-cover rounded-full "
           />
+          </Link>
+          
         </div>
 
         <div className=" bg-indigo-900 flex justify-end pt-4 p-4">
@@ -26,6 +29,7 @@ const Navbar = () => {
             <Menu.Button className="inline-flex justify-center w-full rounded-md border  border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
               Options Menu
             </Menu.Button>
+            
 
             {/* Menu Items */}
 

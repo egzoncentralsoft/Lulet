@@ -1,5 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const {uploadImage} = require('../controllers/flowers')
+const multer = require('multer')
+
+const Multer = multer({
+  storage: multer.memoryStorage()
+})
 
 const {
     getFlower,
@@ -9,14 +15,16 @@ const {
     deleteFlowers
 } = require('../controllers/flowers')
 
-router.get('/', getFlower)
+router.get('/', getFlower);
 
-router.get('/:id', getFlowerbyID)
+router.get('/:id', getFlowerbyID);
 
-router.post('/', createFlowers)
+router.post('/', Multer.single("img"),uploadImage, createFlowers);
 
-router.put('/:id', UpdateFlowers) 
+//router.post('/', Multer.single("image"), uploadImage, createFlowers);
 
-router.delete('/:id', deleteFlowers)
+router.put('/:id', UpdateFlowers); 
+
+router.delete('/:id', deleteFlowers);
 
 module.exports = router;
