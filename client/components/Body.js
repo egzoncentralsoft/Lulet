@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import formData from "form-data";
 
+ //app.options('*', cors())
 const Body = () => {
   const [data, setData] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -30,7 +31,7 @@ const Body = () => {
   // deleting flower with filter method
   const deleteFlower = async (id) => {
     const response = await fetch(
-      `https://frozen-tundra-68521.herokuapp.com/api/flowers${id}`,
+      `https://frozen-tundra-68521.herokuapp.com/api/flowers/${id}`,
       { method: "DELETE" }
     ).then((response) => response.json());
     fetchFlowers();

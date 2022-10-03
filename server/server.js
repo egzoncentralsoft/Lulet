@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}));
 /*
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
-  }) */
+}) */
 
 app.get('/',(req,res)=>{
     res.send('Main Page');

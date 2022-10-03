@@ -1,3 +1,5 @@
+import { Link } from "@mui/material";
+
 const Footer = () => {
   return (
   <div>
@@ -38,7 +40,7 @@ const Footer = () => {
       </div>
       </div>
   <div className="text-center p-6 bg-blue-100">
-    <a className="text-gray-600 font-semibold" href="/">Flowers</a>
+    <Link className="text-gray-600 font-semibold" href="/">Flowers</Link>
   </div>
   </div>
   )
