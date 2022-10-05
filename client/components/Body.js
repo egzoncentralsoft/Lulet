@@ -5,6 +5,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import formData from "form-data";
 
  //app.options('*', cors())
+console.log('djellza')
 const Body = () => {
   const [data, setData] = useState([]);
   const [showModal, setShowModal] = useState(false);

@@ -19,10 +19,15 @@
     "@mui/material": "^5.9.2",
     "@netlify/plugin-nextjs": "^4.20.0",
     "antd": "^4.21.7",
+<<<<<<< HEAD
     "blob": "^0.1.0",
     "File": "^0.10.2",
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
+=======
+    "d": "^1.0.1",
+    "firebase": "^9.9.4",
+>>>>>>> 523a0bbf70178eac9a0c1e0b6858bbf728f6ab4a
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
