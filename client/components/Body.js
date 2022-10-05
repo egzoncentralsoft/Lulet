@@ -58,6 +58,7 @@ const Body = () => {
         //body: JSON.stringify(flower),
       }
     );
+    console.log(flower);
     fetchFlowers();
     setNewFlowerModal(false);
     setFlower({});
