@@ -42,7 +42,7 @@ const Body = () => {
   const addOpenModal = () => {
     setNewFlowerModal(true);
   };
-  console.log('djellza')
+  console.log('djellza');
   const addedFLower = async () => {
 
     const fileData = new formData();
