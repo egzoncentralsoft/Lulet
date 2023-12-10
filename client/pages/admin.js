@@ -13,7 +13,9 @@ export default function Xoni() {
     }
   }, [user]);
 
-  if (isLoading) return <div>... loading</div>;
+  if (isLoading) {
+    return <div>... loading</div>;
+  }
   if (error) return <div>{error.message}</div>;
 
   return (
@@ -26,9 +28,9 @@ export default function Xoni() {
         />
       </div>
       <div className="bg-yellow-100 w-1/3 h-screen">
-        <div className="mt-28 text-center mx-10  ">
+        <div className="mt-28 text-center mx-10">
           <div className="bg-yellow-100 pb-10">
-            <p className="text-6xl text-gray-700 font-semibold  ">
+            <p className="text-6xl text-gray-700 font-semibold">
               Flower Shop
             </p>
           </div>
@@ -38,7 +40,7 @@ export default function Xoni() {
             </h1>
             <Link
               href="/api/auth/login"
-              className=" text-4xl p-4   border-gray-700 border-4  "
+              className=" text-4xl p-4 border-gray-700 border-4"
             >
               Login
             </Link>
